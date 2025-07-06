@@ -1,16 +1,16 @@
 'use client';
 
 import { useState } from 'react';
+import { CATEGORIES } from '@/utils/categories'; // 👈 make sure this path is correct
 
 export default function BudgetForm() {
   const [category, setCategory] = useState('');
-  const [rawMonth, setRawMonth] = useState(''); // 👈 This keeps YYYY-MM format
+  const [rawMonth, setRawMonth] = useState('');
   const [amount, setAmount] = useState('');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Format the month just before submitting
     const [year, m] = rawMonth.split('-');
     const date = new Date(Number(year), Number(m) - 1);
     const formattedMonth = date.toLocaleString('default', { month: 'short', year: 'numeric' });
@@ -43,19 +43,25 @@ export default function BudgetForm() {
     >
       <h2 className="text-lg font-bold">Set Monthly Budget</h2>
 
-      <input
-        type="text"
-        placeholder="Category"
+      {/* 👇 Dropdown instead of input */}
+      <select
         value={category}
         onChange={(e) => setCategory(e.target.value)}
         className="w-full p-2 border rounded"
         required
-      />
+      >
+        <option value="">Select Category</option>
+        {CATEGORIES.map((cat) => (
+          <option key={cat} value={cat}>
+            {cat}
+          </option>
+        ))}
+      </select>
 
       <input
         type="month"
         value={rawMonth}
-        onChange={(e) => setRawMonth(e.target.value)} // ✅ Keep browser value intact
+        onChange={(e) => setRawMonth(e.target.value)}
         className="w-full p-2 border rounded"
         required
       />
