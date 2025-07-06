@@ -31,11 +31,16 @@ export default function BudgetVsActualChart() {
     fetchData();
   }, []);
 
+  // ✅ Ensure month string comparison is trimmed and case-insensitive
   const filteredData = selectedMonth
-    ? data.filter((item) => item.month === selectedMonth)
+    ? data.filter(
+        (item) => item.month.trim().toLowerCase() === selectedMonth.trim().toLowerCase()
+      )
     : data;
 
-  const uniqueMonths = Array.from(new Set(data.map((d) => d.month)));
+  const uniqueMonths = Array.from(new Set(data.map((d) => d.month))).sort(
+    (a, b) => new Date(a).getTime() - new Date(b).getTime()
+  );
 
   return (
     <div className="mt-12">
