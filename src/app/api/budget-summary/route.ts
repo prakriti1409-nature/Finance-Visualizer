@@ -1,27 +1,23 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { NextResponse } from 'next/server';
 import connectToDatabase from '@/lib/mongodb';
-import Transaction from '@/models/Transaction';
 import { Budget } from '@/models/Budget';
+import Transaction from '@/models/Transaction';
 
-export async function GET(_: NextRequest) {
+export async function GET() {
   await connectToDatabase();
 
-  const transactions = await Transaction.find().lean();
   const budgets = await Budget.find().lean();
+  const transactions = await Transaction.find().lean();
 
-  const spendingMap: Record<string, number> = {};
+  const summary = budgets.map((b) => {
+    const spent = transactions
+      .filter((t) => t.category.toLowerCase() === b.category.toLowerCase())
+      .reduce((sum, t) => sum + t.amount, 0);
 
-  for (const txn of transactions) {
-    const cat = txn.category.toLowerCase();
-    spendingMap[cat] = (spendingMap[cat] || 0) + txn.amount;
-  }
-
-  const summary = budgets.map((budget) => {
-    const cat = budget.category.toLowerCase();
     return {
-      category: budget.category,
-      budget: budget.amount,
-      spent: spendingMap[cat] || 0,
+      category: b.category,
+      budget: b.amount,
+      spent,
     };
   });
 

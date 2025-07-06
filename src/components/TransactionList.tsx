@@ -86,7 +86,7 @@ export default function TransactionList({ transactions, onChange }: Props) {
               <input value={editData.amount} onChange={e => setEditData(d => ({ ...d, amount: e.target.value }))} className="border p-1 mr-1 w-20" />
               <input value={editData.description} onChange={e => setEditData(d => ({ ...d, description: e.target.value }))} className="border p-1 mr-1 w-32" />
               <input value={editData.category} onChange={e => setEditData(d => ({ ...d, category: e.target.value }))} className="border p-1 mr-1 w-24" />
-              <button onClick={() => handleUpdate(txn._id)} className="text-green-600 mr-2">Save</button>
+              <button onClick={() => handleUpdate(txn._id)} className="text-green-900 mr-2">Save</button>
               <button onClick={() => setEditingId(null)} className="text-gray-600">Cancel</button>
             </div>
           ) : (

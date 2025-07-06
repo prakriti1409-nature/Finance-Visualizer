@@ -47,8 +47,10 @@ export default function BudgetVsActualChart() {
           className="border px-2 py-1 rounded"
         >
           <option value="">All</option>
-          {uniqueMonths.map((m) => (
-            <option key={m} value={m}>{m}</option>
+          {uniqueMonths.map((m, i) => (
+            <option key={`${m}-${i}`} value={m}>
+              {m}
+            </option>
           ))}
         </select>
       </div>
