@@ -106,7 +106,7 @@ export default function TransactionForm({ onAdd }: Props) {
         {loading ? 'Saving...' : 'Add Transaction'}
       </button>
 
-      {success && <p className="text-green-600">Transaction added!</p>}
+      {success && <p className="text-black">Transaction added!</p>}
     </form>
   );
 }
