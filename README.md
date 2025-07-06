@@ -30,6 +30,12 @@ Visualize, track, filter, and manage your expenses with charts, filters, CSV exp
 
 ---
 
+## 🌍 Live Demo
+
+Deployed via **Vercel**:  
+###👉 [finance-visualizer-8dim.vercel.app](https://finance-visualizer-8dim.vercel.app/)
+
+---
 
 ---
 
@@ -67,12 +73,6 @@ MONGODB_URI=your_mongodb_connection_string
 # 4. Run the app
 npm run dev
 ```
-## 🌍 Live Demo
-
-Deployed via **Vercel**:  
-👉 [finance-visualizer-8dim.vercel.app](https://finance-visualizer-8dim.vercel.app/)
-
----
 
 ## 📦 Deployment Notes
 
