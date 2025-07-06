@@ -51,7 +51,12 @@ export default function TransactionList({ transactions, onChange }: Props) {
   };
 
   const handleDelete = async (id: string) => {
-    await fetch('/api/transactions', { method: 'DELETE', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ id }) });
+    await fetch('/api/transactions', {
+  method: 'DELETE',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({ _id: id }), 
+});
+
     onChange();
   };
 
