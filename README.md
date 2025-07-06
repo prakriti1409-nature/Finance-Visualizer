@@ -1,36 +1,111 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 💰 Personal Finance Visualizer
 
-## Getting Started
+A full-stack personal finance dashboard built with **Next.js 15**, **TypeScript**, **MongoDB**, and **Tailwind CSS**.  
+Visualize, track, filter, and manage your expenses with charts, filters, CSV export, budget tracking, and insights.
 
-First, run the development server:
+---
+
+## 🚀 Features
+
+- ✅ Add, edit, delete transactions
+- 📊 Visual charts for:
+  - Monthly expenses
+  - Category-wise breakdown
+  - Budget vs Actual spend
+- 💸 Budget entry and comparison
+- 🧠 Budget overspend insights
+- 🔎 Filters: date range, amount, category, description
+- 📥 CSV export of transactions
+- 📱 Responsive UI (mobile-first)
+- 🧼 Clean and simple UX
+
+---
+
+## 🛠 Tech Stack
+
+| Frontend               | Backend         | Database      | Styling        |
+|------------------------|-----------------|---------------|----------------|
+| Next.js 15 (App Router)| API Routes (REST)| MongoDB Atlas | Tailwind CSS   |
+| TypeScript             | Server Actions  | Mongoose      | Recharts       |
+
+---
+
+
+---
+
+## 🧪 API Endpoints
+
+| Method | Endpoint              | Description                        |
+|--------|------------------------|------------------------------------|
+| GET    | `/api/transactions`    | Get all transactions               |
+| POST   | `/api/transactions`    | Add new transaction                |
+| DELETE | `/api/transactions`    | Delete a transaction by `_id`      |
+| PATCH  | `/api/transactions`    | Update a transaction by `_id`      |
+| GET    | `/api/budgets`         | Get all budgets                    |
+| POST   | `/api/budgets`         | Add a new budget                   |
+| GET    | `/api/budget-summary`  | Summary of budget vs actual spend  |
+
+---
+
+
+
+## ✅ How to Run Locally
 
 ```bash
+# 1. Clone the repo
+git clone https://github.com/prakriti1409-nature/Finance-Visualizer.git
+cd Finance-Visualizer
+
+# 2. Install dependencies
+npm install
+
+# 3. Add your environment variable
+touch .env.local
+# Then add:
+MONGODB_URI=your_mongodb_connection_string
+
+# 4. Run the app
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
+## 🌍 Live Demo
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Deployed via **Vercel**:  
+👉 [finance-visualizer-8dim.vercel.app](https://finance-visualizer-8dim.vercel.app/)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📦 Deployment Notes
 
-## Learn More
+- Uses `next` as a dependency (not `devDependency`)
+- Built with **App Router** (`/app` directory) – requires **Next.js 13+**
+- **MongoDB Atlas** is used for persistent cloud storage
+- Auto-deployment via **Vercel** GitHub integration
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## ✨ Screenshots
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+![s1](https://github.com/user-attachments/assets/f340ad29-ec4f-4172-a584-1e0b267e815f)
 
-## Deploy on Vercel
+![s2](https://github.com/user-attachments/assets/8db5f5c4-e806-44af-8409-bbe9bd013bc8)
+![s3](https://github.com/user-attachments/assets/cfe297db-aca9-4393-80a2-a5352839ff26)
+![image](https://github.com/user-attachments/assets/5bdd41dc-38a3-4229-a416-e31a26bebbb0)
+![image](https://github.com/user-attachments/assets/df7f3755-f4d5-49ed-8580-4751bd1cd534)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+![s6](https://github.com/user-attachments/assets/2451e8a9-20c5-4f31-a604-cbd678533287)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+
+
+
+---
+
+## 👩‍💻 Author
+
+Built with 💙 by **Prakriti Yadav**  
+📎 [GitHub Profile](https://github.com/prakriti1409-nature)
+
+---
+
+
+
