@@ -23,10 +23,10 @@ Visualize, track, filter, and manage your expenses with charts, filters, CSV exp
 
 ## 🛠 Tech Stack
 
-| Frontend               | Backend         | Database      | Styling        |
-|------------------------|-----------------|---------------|----------------|
-| Next.js 15 (App Router)| API Routes (REST)| MongoDB Atlas | Tailwind CSS   |
-| TypeScript             | Server Actions  | Mongoose      | Recharts       |
+| Frontend                         | Backend          | Database      | Styling         |
+|--------------------------------- |------------------|---------------|-----------------|
+|React.js & Next.js 15 (App Router)| API Routes (REST)| MongoDB Atlas | Tailwind CSS    |
+| TypeScript                       | Server Actions   | Mongoose      | Recharts        |
 
 ---
 
